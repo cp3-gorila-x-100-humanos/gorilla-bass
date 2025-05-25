@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Um jogo divertido entre um gorila e 100 humanos."
+    />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <title>Gorila vs 100 Humanos</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>🦍 Gorila vs 100 Humanos 🥊</h1>
+    </header>
+
+    <main class="game-container">
+      <section class="characters">
+        <img
+          src="assets/img/gorila.png"
+          alt="Gorila"
+          class="character gorila"
+        />
+        <img
+          src="assets/img/humano.png"
+          alt="Humano"
+          class="character humano"
+        />
+      </section>
+
+      <section class="status-container">
+        <div class="gorilla-status">
+          <h3>Gorila</h3>
+          <label for="gorilla-life">Vida:</label>
+          <div class="life-bar-bg">
+            <div class="life-bar" id="gorilla-life"></div>
+          </div>
+          <p id="gorilla-life-text">100</p>
+        </div>
+        <div class="humans-status">
+          <h3>Humanos restantes</h3>
+          <p id="humans-count">100</p>
+        </div>
+      </section>
+
+      <section class="buttons">
+        <button onclick="gorillaAttack()" aria-label="O gorila ataca">
+          🗡️ Atacar
+        </button>
+        <button onclick="gorillaDefend()" aria-label="O gorila se defende">
+          🛡️ Defender
+        </button>
+        <button onclick="gorillaHeal()" aria-label="O gorila se cura">
+          ❤️ Curar
+        </button>
+        <button onclick="resetGame()" aria-label="Reiniciar o jogo">
+          🌀 Reiniciar
+        </button>
+      </section>
+
+      <div id="log" class="log-box" role="log" aria-live="polite"></div>
+
+      <!-- POP-UP FINAL -->
+      <dialog id="popup" class="popup">
+        <img id="popup-image" src="" alt="Resultado do jogo" />
+        <p id="popup-text"></p>
+        <button onclick="closePopup()">Fechar</button>
+      </dialog>
+    </main>
+
+    <footer>
+      <button
+        id="toggle-music"
+        aria-label="Ativar ou desativar música de fundo"
+      >
+        🔊 Ligar Música
+      </button>
+    </footer>
+
+    <audio id="bg-music" loop>
+      <source src="assets/audio/background-sound.mp3" type="audio/mpeg" />
+
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <div class="attack-effect" id="attack-effect"></div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
