@@ -25,3 +25,10 @@ function gorillaHeal() {
   log(`❤️ O gorila se curou em ${heal} pontos de vida.`);
   updateStatus();
 }
+
+function updateStatus() {
+  document.getElementById('gorilla-life').style.width = `${gorillaLife}%`;
+  document.getElementById('gorilla-life-text').textContent = gorillaLife;
+  const alive = humans.filter(h => h).length;
+  document.getElementById('humans-count').textContent = alive;
+}
