@@ -79,6 +79,20 @@ function checkEndGame() {
   }
 }
 
+function showPopup(imageSrc, text) {
+  document.getElementById("popup-image").src = imageSrc;
+  document.getElementById("popup-text").textContent = text;
+  document.getElementById("popup").style.display = "block";
+}
+
+function hidePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+function closePopup() {
+  hidePopup();
+}
+
 function showAttackEffect() {
   const effect = document.getElementById("attack-effect");
   effect.style.display = "block";
