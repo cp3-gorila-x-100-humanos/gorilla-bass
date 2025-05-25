@@ -109,6 +109,10 @@ function showAttackEffect() {
   setTimeout(() => effect.style.display = "none", 300);
 }
 
+window.onload = () => {
+  restartGame();
+}
+
 const bgMusic = document.getElementById('bg-music');
 const toggleMusicButton = document.getElementById('toggle-music');
 let isPlaying = false;
