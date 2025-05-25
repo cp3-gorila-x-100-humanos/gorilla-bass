@@ -69,13 +69,6 @@ gorilla-bass/
 │ └── /audio
 
 │ ├── background-sound.mp3
-
- 
-yaml
-
-Copiar
-
-Editar
  
 ---
  
