@@ -108,3 +108,18 @@ function showAttackEffect() {
   effect.style.display = "block";
   setTimeout(() => effect.style.display = "none", 300);
 }
+
+const bgMusic = document.getElementById('bg-music');
+const toggleMusicButton = document.getElementById('toggle-music');
+let isPlaying = false;
+
+toggleMusicButton.addEventListener('click', () => {
+  if (isPlaying) {
+    bgMusic.pause();
+    toggleMusicButton.innerText = '🔇 Ligar Música';
+  } else {
+    bgMusic.play();
+    toggleMusicButton.innerText = '🔊 Desligar Música';
+  }
+  isPlaying = !isPlaying;
+})
