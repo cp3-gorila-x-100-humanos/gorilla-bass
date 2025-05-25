@@ -3,6 +3,12 @@ let humans = Array(100).fill(true);
 let defending = false;
 let attackInterval;
 
+function updateStatus() {
+    document.getElementById('gorilla-life').style.width = `${gorillaLife}%`;
+    document.getElementById('gorilla-life-text').textContent = gorillaLife;
+    const alive = humans.filter(h => h).length;
+    document.getElementById('humans-count').textContent = alive;
+}
 
 function log(text) {
   const logDiv = document.getElementById('log');
@@ -65,11 +71,12 @@ function startGameLoop() {
   }, 2000);
 }
 
-function updateStatus() {
-    document.getElementById('gorilla-life').style.width = `${gorillaLife}%`;
-    document.getElementById('gorilla-life-text').textContent = gorillaLife;
-    const alive = humans.filter(h => h).length;
-    document.getElementById('humans-count').textContent = alive;
+function checkEndGame() {
+  const alive = humans.filter(h => h).length;
+  if (alive <= 0) {
+    showPopup("/assets/img/resultado-vitoria-gorila.png", "🏆 O gorila venceu todos os humanos!");
+    clearInterval(attackInterval);
+  }
 }
 
 function showAttackEffect() {
