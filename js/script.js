@@ -18,3 +18,10 @@ function gorillaAttack() {
   checkEndGame();
   updateStatus();
 }
+
+function gorillaHeal() {
+  const heal = Math.floor(Math.random() * 11) + 10;
+  gorillaLife = Math.min(gorillaLife + heal, 100);
+  log(`❤️ O gorila se curou em ${heal} pontos de vida.`);
+  updateStatus();
+}
