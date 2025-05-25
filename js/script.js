@@ -4,6 +4,12 @@ let defending = false;
 let attackInterval;
 
 
+function log(text) {
+  const logDiv = document.getElementById('log');
+  logDiv.innerHTML += `📝 ${text}<br>`;
+  logDiv.scrollTop = logDiv.scrollHeight;
+}
+
 function gorillaAttack() {
     showAttackEffect();
     const toKill = Math.floor(Math.random() * 6) + 3;
