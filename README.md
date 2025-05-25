@@ -93,7 +93,3 @@ gorilla-bass/
 ✅ Validação de fim de jogo (vitória do gorila ou dos humanos)  
 
 ✅ Interface responsiva e estilizada com tema de selva  
- 
----
-
- 
