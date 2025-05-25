@@ -79,6 +79,16 @@ function checkEndGame() {
   }
 }
 
+function resetGame() {
+  gorillaLife = 100;
+  humans = Array(100).fill(true);
+  defending = false;
+  document.getElementById('log').innerHTML = '';
+  updateStatus();
+  hidePopup();
+  startGameLoop();
+}
+
 function showPopup(imageSrc, text) {
   document.getElementById("popup-image").src = imageSrc;
   document.getElementById("popup-text").textContent = text;
