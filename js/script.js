@@ -57,6 +57,14 @@ function humanAttack() {
   updateStatus();
 }
 
+function startGameLoop() {
+  if (attackInterval) clearInterval(attackInterval);
+  attackInterval = setInterval(() => {
+    humanAttack();
+    checkEndGame();
+  }, 2000);
+}
+
 function updateStatus() {
     document.getElementById('gorilla-life').style.width = `${gorillaLife}%`;
     document.getElementById('gorilla-life-text').textContent = gorillaLife;
